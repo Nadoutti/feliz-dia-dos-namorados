@@ -43,7 +43,7 @@ export const verses = [
   {
     num: "iv.",
     title: "Hoje, você é meu <em>lugar favorito</em>",
-    body: "Onde eu mais quero estar, ao seu lado, te amando e crescendo com você, te amando, respeitando e podendo ser seu e você podendo ser minha.",
+    body: "Onde eu mais quero estar, ao seu lado, te amando, crescendo com você, respeitando, podendo ser seu e você podendo ser minha.",
     align: "right",
     ornament: true,
     photo: "/photos/p1.jpeg",
@@ -53,11 +53,11 @@ export const verses = [
 
 export const declaration = {
   title: "E eu queria te dizer<br>uma <em>coisa</em>",
-  body: "Eu te amo, sempre te amei, e no fim, sempre fui seu minha gatinha, sou extremamente grato por poder te fazer feliz e quero construir uma vida incrivel com voce.",
+  body: "Eu te amo, sempre te amei, e no fim, sempre fui seu minha gatinha, sou extremamente grato por poder te fazer feliz e quero construir uma vida incrivel com voce. Te amar é a melhor escolha que faço todos os meus dias",
 };
 
 export const signoff = {
   small: "com amor,",
-  name: "seu Pedro",
+  name: "Pedro",
   date: "12 · 06 · 2026",
 };
