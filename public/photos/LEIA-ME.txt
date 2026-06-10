@@ -1,0 +1,6 @@
+Coloque suas fotos aqui.
+
+Depois referencie em src/data/content.js, ex:
+  photo: "/photos/primeiro-encontro.jpg"
+
+Aceita .jpg .jpeg .png .webp. Nomes sem espaco (use - no lugar).
