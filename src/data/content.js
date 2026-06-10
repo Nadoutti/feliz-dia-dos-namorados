@@ -15,7 +15,7 @@ export const verses = [
   {
     num: "i.",
     title: "No dia em que <em>te conheci</em>",
-    body: "Fiquei congelado por você, conversamos por muitas horas, parecia que o assunto não acabava nunca (nunca acabou na verdade).",
+    body: "Fiquei congelado por você, conversamos por muitas horas, parecia que o assunto não acabava nunca (nunca acabou na verdade kkkkkkk).",
     align: "left",
   },
   {
