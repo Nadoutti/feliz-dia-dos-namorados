@@ -45,7 +45,7 @@ export const declaration = {
 };
 
 export const signoff = {
-  small: "com todo o meu amor,",
+  small: "com amor,",
   name: "seu Pedro",
   date: "12 · 06 · 2026",
 };
