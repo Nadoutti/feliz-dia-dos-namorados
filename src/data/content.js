@@ -33,7 +33,7 @@ export const verses = [
   {
     num: "iv.",
     title: "Hoje, você virou o meu <em>lugar favorito</em>",
-    body: "Onde eu mais quero estar, ao seu lado, te amando e crescendo com você, podendo ser seu e você podendo ser minha.",
+    body: "Onde eu mais quero estar, ao seu lado, te amando e crescendo com você, te amando, respeitando e podendo ser seu e você podendo ser minha.",
     align: "right",
     ornament: true,
   },
