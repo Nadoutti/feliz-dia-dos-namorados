@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THEME — midnight violet / plum, lavender ink, rare gold
+   Exposed as Tailwind tokens (text-orchid, bg-void, ...)
+   ============================================================ */
+@theme {
+  --color-void: #0b0512;
+  --color-plum: #1a0b2e;
+  --color-wine: #2d0f47;
+  --color-violet: #7c3aed;
+  --color-orchid: #c084fc;
+  --color-lilac: #e9d5ff;
+  --color-mist: #cbb6e6;
+  --color-gold: #f5d8a0;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Newsreader", Georgia, serif;
+
+  --ease-soft: cubic-bezier(0.16, 0.84, 0.32, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-lilac);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  /* layered violet auroras, fixed for depth */
+  background-image:
+    radial-gradient(120% 80% at 80% -10%, rgba(124, 58, 237, 0.3), transparent 55%),
+    radial-gradient(100% 70% at 0% 110%, rgba(192, 132, 252, 0.18), transparent 50%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--color-violet);
+  color: #fff;
+}
+
+/* grain overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(112vh) translateX(8vw) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.22); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.16); }
+  70% { transform: scale(1); }
+}
+
+@keyframes cuePulse {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+.animate-beat {
+  animation: beat 1.6s var(--ease-soft) infinite;
+}
+.animate-cue {
+  animation: cuePulse 2.4s var(--ease-soft) infinite;
+  transform-origin: top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-beat,
+  .animate-cue,
+  .petal { animation: none !important; }
+}
+
+/* decorative quote glyph behind verses */
+.quote-mark::before {
+  content: "\201C";
+  position: absolute;
+  top: -3.2rem;
+  left: -1.2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 9rem;
+  line-height: 1;
+  color: var(--color-violet);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.petal {
+  position: absolute;
+  top: -8vh;
+  animation: fall linear infinite;
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.45));
+}
+
+/* highlighted words inside headings (from <em> in copy) */
+.ink em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-orchid);
+}
+.ink-grad em {
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--color-orchid), var(--color-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
